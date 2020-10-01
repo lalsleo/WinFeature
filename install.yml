@@ -1,0 +1,13 @@
+---
+- name: "Configure Windows Features"
+  hosts: windows
+  tasks:
+    - name: "Changing Windows Features" 
+      win_feature:
+            name:
+              - "{{ windows_features }}"
+            state: "{{ feature_state }}"
+      register: win_feature
+    - name: "Reboot server if needed"
+      win_reboot:
+      when: win_feature.reboot_required
