@@ -8,6 +8,8 @@
             name:
               - "{{ windows_features }}"
             state: "{{ feature_state }}"
+            include_sub_features: "{{ sub_feature_state }}"
+            include_management_tools: "{{ management_tools_state }}"
       register: win_feature
     - name: "Reboot server if needed"
       win_reboot:
