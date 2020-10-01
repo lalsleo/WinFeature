@@ -1,6 +1,7 @@
 ---
 - name: "Configure Windows Features"
-  hosts: windows
+  hosts: all
+
   tasks:
     - name: "Changing Windows Features" 
       win_feature:
