@@ -5,8 +5,7 @@
   tasks:
     - name: "Changing Windows Features" 
       win_feature:
-            name:
-              - "{{ windows_features }}"
+            name: "{{ windows_features }}"
             state: "{{ feature_state }}"
             include_sub_features: "{{ sub_feature_state }}"
             include_management_tools: "{{ management_tools_state }}"
